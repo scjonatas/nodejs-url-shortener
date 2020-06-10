@@ -1,0 +1,17 @@
+{
+  "name": "docker_web_app",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Jonatas Correia <scjonatas@gmail.com>",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "mysql": "^2.18.1",
+    "moment": "^2.26.0",
+    "jest": "^26.0.1"
+  }
+}

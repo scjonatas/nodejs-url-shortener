@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  web:
+    build: .
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+      - ./tests:/usr/src/tests
+    ports:
+      - 8081:8081
+    command: npm start
+  db:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+    volumes: 
+      - ./mysql:/var/lib/mysql
+      - ./database_structure:/docker-entrypoint-initdb.d
+
